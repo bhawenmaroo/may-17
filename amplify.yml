@@ -5,7 +5,7 @@ applications:
       phases:
         preBuild:
           commands:
-            - npm install -g pnpm
+            - npm install -g pnpm@10.33.2
             - cd ../..
             - pnpm install
             - cd artifacts/indibiotek-3d
