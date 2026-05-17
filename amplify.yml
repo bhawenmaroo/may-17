@@ -1,0 +1,21 @@
+version: 1
+applications:
+  - appRoot: artifacts/indibiotek-3d
+    frontend:
+      phases:
+        preBuild:
+          commands:
+            - npm install -g pnpm
+            - cd ../..
+            - pnpm install
+            - cd artifacts/indibiotek-3d
+        build:
+          commands:
+            - pnpm run build
+      artifacts:
+        baseDirectory: dist
+        files:
+          - '**/*'
+      cache:
+        paths:
+          - ../../node_modules/**/*
